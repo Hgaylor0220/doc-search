@@ -8,7 +8,7 @@ $(document).ready(function() {
   $('#submit').click(function() {
     const symptoms = $("#userSymptoms").val();
     const state = $("#userState").val();
-
+    let providerInfo=[];
 
 
     let results = new DocSearch();
@@ -17,14 +17,24 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       const body = JSON.parse(response);
-      console.log(body.data[0].practices[0].visit_address);
+      for(let i=0; i < 10; i++) {
+        providerInfo[i] = body.data[i].practices;
+
+        $("#location").append(`<div id=q${i} class="question col-md-4">
+         <h4 class="category">${body.results[i].category}</h4>
+         <h3 class="points">$${scoring[scoring.indexOf(body.results[i].difficulty)+1]}</h3>
+       </div><br>`);
+      }
+      console.log(providerInfo);
+      // console.log(body.data[0].practices[0].visit_address);
 // body.data[].practices[].accepts_new_patients
 // body.data[].practices[].visit_address
 // body.data[].practices[].phones
 // body.data[].practices[].name
 // body.data[].practices[].office_hours
-      $('.doctor').html( `Displaying a list of providers in ${state} ,  ${body.data[0].practices[0]}`);
-      $('.location').html( `located at ${state} ,  ${body.data[0].practices[0]} `);
+
+       $('.doctor').html( `Displaying a list of providers in ${state} ,  ${body.data[0,1].profile}`);
+
 
 
 
