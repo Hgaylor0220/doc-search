@@ -8,18 +8,24 @@ $(document).ready(function() {
   $('#submit').click(function() {
     const symptoms = $("#userSymptoms").val();
     const state = $("#userState").val();
-  
+
+
 
     let results = new DocSearch();
     let promise = results.searchparameters(state,symptoms);  // call the instance method and pass in user input
 
 
-    promise.then(function() {
-      // for(let i=0; i<provider.length; i++) {
-
+    promise.then(function(response) {
       const body = JSON.parse(response);
-      // leproviders =(body.data[0,1].profile);
-      $('.doctor').html( `Displaying a list of providers in ${state} ,  ${body.data[0,1].profile}`);
+      console.log(body.data[0].practices[0].visit_address);
+// body.data[].practices[].accepts_new_patients
+// body.data[].practices[].visit_address
+// body.data[].practices[].phones
+// body.data[].practices[].name
+// body.data[].practices[].office_hours
+      $('.doctor').html( `Displaying a list of providers in ${state} ,  ${body.data[0].practices[0]}`);
+      $('.location').html( `located at ${state} ,  ${body.data[0].practices[0]} `);
+
 
 
     }, function(error) {
