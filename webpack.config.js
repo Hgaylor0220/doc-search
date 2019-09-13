@@ -19,7 +19,7 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new Dotenv(),
     new HtmlWebpackPlugin({
-      title: 'National-Calendar',
+      title: 'doc-search',
       template: './src/index.html',
       inject: 'body'
     })

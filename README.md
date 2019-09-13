@@ -1,12 +1,12 @@
-# _National Giphy Calendar_
+# _Doctor Search  _
 
-#### _{A national calendar with random Gifs for the months}, {Sept. 12th 2019 }_
+#### _{Locate a doctor that specializes in your condition}, {Sept. 13th 2019 }_
 
-#### By _**{Hailey Gaylor, Jason Huels}**_
+#### By _**{Hailey Gaylor}**_
 
 ## Description
 
-_{Tis the calendar that shall give to you multiple holiday traditions of many countries.}_
+_{This ap will allow you to input a symptom and find a doctor in your area.}_
 
 ## Setup/Installation Requirements
 
@@ -16,14 +16,14 @@ _{Tis the calendar that shall give to you multiple holiday traditions of many co
 * _revel in our greatness!_
 
 
-_{Have you ever wondered if other countries celebrate the same holidays? Or if Oktoberfest is around the same time of year? Well.... this is the calendar for you!}_
+_{Be sure to read up on the documentation for the Api key}_
 
 ## Specs
 
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| User selects a month | 'month' | 'September' |
-|  User views the month  | September | full month of September |
+| ------------- | :-------------: | -----: |
+
 
 
 
@@ -46,4 +46,4 @@ _{Github, API calls, Promises.}_
 
 *{License pending upon job}*
 
-Copyright (c) 2016 **_{Hailey Gaylor, Jason Huels}_**
+Copyright (c) 2016 **_{Hailey Gaylor}_**

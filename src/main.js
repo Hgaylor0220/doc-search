@@ -2,8 +2,8 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { Dictionary } from './definition-gif';
-import { GiphyGenerator } from './definition-gif';
+import { Dictionary } from './doc-search';
+import { GiphyGenerator } from './doc-search';
 
 $(document).ready(function() {
   $('#submit').click(function() {
