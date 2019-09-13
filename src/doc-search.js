@@ -4,7 +4,7 @@ export class GiphyGenerator {
   searchGifs(keyword) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `http://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${keyword}&limit=1`; // watch for back ticks.
+      const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=WA&query=headache&ski=0&limit=10&user_key=${process.env.API_KEY}`; // watch for back ticks.
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
