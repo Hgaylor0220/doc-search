@@ -8,15 +8,19 @@ $(document).ready(function() {
   $('#submit').click(function() {
     const symptoms = $("#userSymptoms").val();
     const state = $("#userState").val();
-    console.log(symptoms,state);
+  
+
     let results = new DocSearch();
     let promise = results.searchparameters(state,symptoms);  // call the instance method and pass in user input
-    console.log(promise);
 
-    promise.then(function(response) {
+
+    promise.then(function() {
+      // for(let i=0; i<provider.length; i++) {
+
       const body = JSON.parse(response);
-      $('.doctor').text( `Displaying a list of locations in ${state} ${body.main.humidity}%`);
-      $('.location').text(` and a selection of providers for ${symptoms} ${body.main.temp}`);
+      // leproviders =(body.data[0,1].profile);
+      $('.doctor').html( `Displaying a list of providers in ${state} ,  ${body.data[0,1].profile}`);
+
 
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error.message}`);
