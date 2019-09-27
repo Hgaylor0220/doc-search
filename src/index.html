@@ -7,18 +7,20 @@
 
   <body>
     <div class="container">
-      <label for="symptoms">Symptom:</label>
-      <input id="userSymptoms" type="text">
-      <label for="state">Enter state in 'WA' formate:</label>
-      <input id="userState" type="text">
 
-      <button class="btn-success" id="submit">Search</div><br>
+        <label for="symptoms">Symptom:</label>
+        <input id="userSymptoms" type="text">
+        <label for="state">Enter state in 'WA' formate:</label>
+        <input id="userState" type="text">
+
+        <button class="btn-success" id="submit">Search</div><br>
+    
       <div class="showErrors"></div>
-      <div class="doctor"></div>
-      <li id="locations" value="text">
-        <ul class "providerLocation">
-
-        </ul>
+      <div id="searchResults">
+        <h2>Search Results</h2>
+        <p class="message"></p>
+        <ul></ul>
+      </div>
       </li>
     </div>
   </body>
