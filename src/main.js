@@ -32,21 +32,23 @@ $(document).ready(function() {
 
           // Generate list of locations
           if (Array.isArray(doctor.practices)) {
-            console.log('Execution!');
-            // rowOutput += ''
-            rowOutput = rowOutput.concat('<ul><li>Locations</li></ul>');
-            // console.log('Start loop');
-            // doctor.practices.forEach(function(location) {
-            //   console.log('In loop');
-            //   // console.log(location)
-            //   rowOutput += '<li>Location Test</li>';
-            // });
-            // console.log('End loop');
+            rowOutput += '<ul><li>Locations<ul>'
+
+            doctor.practices.forEach(function(location) {
+              // console.log(location)
+              console.log(location);
+              var addressData = location.visit_address
+
+              rowOutput += '<li>' + addressData.street + ' ' + addressData.city
+                +  ' ' + addressData.state  + '</li>';
+            });
+
+            rowOutput += '</ul></li></ul>'
 
           }
           rowOutput += '</li>';
 
-          $('#searchResults ul').append(rowOutput);
+          $('#searchResults > ul').append(rowOutput);
         }
       }
     });
